@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ZingMind HRMS</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- AOS Library for Scroll Animations -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+  <style>
+    body { font-family: 'Poppins', sans-serif; }
+    html { scroll-behavior: smooth; }
+    .hero-bg {
+      background: linear-gradient(135deg, #4f46e5 0%, #06b6d4 100%);
+    }
+    .glass {
+      backdrop-filter: blur(15px);
+      background: rgba(255, 255, 255, 0.15);
+      transition: all 0.3s ease;
+    }
+    .glass:hover {
+      transform: scale(1.05);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    }
+    /* Custom animations for premium feel */
+    @keyframes float {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-10px); }
+    }
+    .float-animation {
+      animation: float 3s ease-in-out infinite;
+    }
+    @keyframes slideInLeft {
+      from { transform: translateX(-100%); opacity: 0; }
+      to { transform: translateX(0); opacity: 1; }
+    }
+    @keyframes slideInRight {
+      from { transform: translateX(100%); opacity: 0; }
+      to { transform: translateX(0); opacity: 1; }
+    }
+    .slide-in-left {
+      animation: slideInLeft 1s ease-out;
+    }
+    .slide-in-right {
+      animation: slideInRight 1s ease-out;
+    }
+  </style>
+</head>
+<body class="bg-gray-50">
+
+  <!-- Nav -->
+  <nav class="fixed top-0 w-full bg-white/80 backdrop-blur-lg z-50 shadow" data-aos="fade-down" data-aos-duration="1000">
+    <div class="container mx-auto flex justify-between items-center py-4 px-6">
+      <h1 class="text-2xl font-bold text-indigo-600">ZingMind HRMS</h1>
+      <div class="hidden md:flex space-x-8 font-medium">
+        <a href="#home" class="hover:text-indigo-600 transition duration-300">Home</a>
+        <a href="#about" class="hover:text-indigo-600 transition duration-300">About</a>
+        <a href="#services" class="hover:text-indigo-600 transition duration-300">Modules</a>
+        <a href="#contact" class="hover:text-indigo-600 transition duration-300">Contact</a>
+      </div>
+      <a href="login" class="bg-indigo-600 text-white px-5 py-2 rounded-full hover:bg-indigo-700 transition duration-300 transform hover:scale-105">Login</a>
+      <button id="menu-btn" class="md:hidden text-3xl text-indigo-500">&#9776;</button>
+    </div>
+
+    <div id="menu" class="hidden flex-col bg-white shadow-md text-center md:hidden">
+      <a href="#home" class="py-3 hover:bg-gray-100 transition duration-300">Home</a>
+      <a href="#about" class="py-3 hover:bg-gray-100 transition duration-300">About</a>
+      <a href="#services" class="py-3 hover:bg-gray-100 transition duration-300">Modules</a>
+      <a href="#contact" class="py-3 hover:bg-gray-100 transition duration-300">Contact</a>
+      <a href="login" class="py-3 font-semibold hover:bg-gray-200 transition duration-300">Login</a>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section id="home" class="hero-bg text-white pt-40 pb-32 px-6">
+    <div class="container mx-auto grid md:grid-cols-2 gap-10 items-center">
+      
+      <div class="slide-in-left" data-aos="fade-right" data-aos-duration="1200">
+        <h2 class="text-5xl font-bold leading-tight mb-5">
+          Smart HRMS for a Smart Workforce
+        </h2>
+        <p class="text-lg opacity-90 mb-8">
+          Automate attendance, payroll, and employee lifecycle management with AI-powered insights — everything in one HR suite.
+        </p>
+        <a href="login" class="bg-white text-indigo-600 font-semibold px-8 py-3 rounded-full hover:bg-gray-100 transition duration-300 transform hover:scale-105 shadow-lg">
+          Explore Dashboard
+        </a>
+      </div>
+
+      <div class="slide-in-right grid grid-cols-2 gap-6" data-aos="fade-left" data-aos-duration="1200">
+        <div class="glass rounded-2xl p-6 text-center float-animation">
+          <img src="https://cdn-icons-png.flaticon.com/512/6404/6404095.png" class="w-14 mx-auto mb-3">
+          <h4 class="font-semibold">Employee Self Service</h4>
+        </div>
+        <div class="glass rounded-2xl p-6 text-center float-animation" style="animation-delay: 0.5s;">
+          <img src="https://cdn-icons-png.flaticon.com/512/8262/8262288.png" class="w-14 mx-auto mb-3">
+          <h4 class="font-semibold">Payroll & Finance</h4>
+        </div>
+        <div class="glass rounded-2xl p-6 text-center float-animation" style="animation-delay: 1s;">
+          <img src="https://cdn-icons-png.flaticon.com/512/2920/2920244.png" class="w-14 mx-auto mb-3">
+          <h4 class="font-semibold">Attendance AI</h4>
+        </div>
+        <div class="glass rounded-2xl p-6 text-center float-animation" style="animation-delay: 1.5s;">
+          <img src="https://cdn-icons-png.flaticon.com/512/3715/3715523.png" class="w-14 mx-auto mb-3">
+          <h4 class="font-semibold">Performance</h4>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- About -->
+  <section id="about" class="py-20 text-center px-6" data-aos="fade-up" data-aos-duration="1000">
+    <h2 class="text-4xl font-bold text-gray-800 mb-6">What is ZingMind HRMS?</h2>
+    <p class="max-w-3xl mx-auto text-gray-600">
+      A complete HR solution trusted by growing companies to digitize workforce management —
+      improving productivity, accuracy & employee experience.
+    </p>
+  </section>
+
+  <!-- Services -->
+  <section id="services" class="bg-gray-100 py-20 px-6">
+    <div class="container mx-auto text-center" data-aos="fade-up" data-aos-duration="1000">
+      <h2 class="text-4xl font-bold text-gray-800 mb-12">Core Modules</h2>
+      <div class="grid md:grid-cols-3 gap-8">
+
+        <!-- Card -->
+        <div class="bg-white rounded-2xl p-8 shadow hover:-translate-y-2 hover:shadow-lg transition duration-500 transform" data-aos="zoom-in" data-aos-delay="200">
+          <img src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png" class="w-14 mx-auto mb-4">
+          <h3 class="text-2xl text-indigo-600 font-semibold">Employee Management</h3>
+          <p class="text-gray-600 mt-3">Centralized employee data with secure role-based access.</p>
+        </div>
+
+        <div class="bg-white rounded-2xl p-8 shadow hover:-translate-y-2 hover:shadow-lg transition duration-500 transform" data-aos="zoom-in" data-aos-delay="400">
+          <img src="https://cdn-icons-png.flaticon.com/512/4637/4637103.png" class="w-14 mx-auto mb-4">
+          <h3 class="text-2xl text-indigo-600 font-semibold">Payroll</h3>
+          <p class="text-gray-600 mt-3">Automated salary processing with compliant payslips.</p>
+        </div>
+
+        <div class="bg-white rounded-2xl p-8 shadow hover:-translate-y-2 hover:shadow-lg transition duration-500 transform" data-aos="zoom-in" data-aos-delay="600">
+          <img src="https://cdn-icons-png.flaticon.com/512/1171/1171902.png" class="w-14 mx-auto mb-4">
+          <h3 class="text-2xl text-indigo-600 font-semibold">Attendance</h3>
+          <p class="text-gray-600 mt-3">AI-backed attendance tracking & shift automation.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" class="container mx-auto px-6 py-20" data-aos="fade-up" data-aos-duration="1000">
+    <h2 class="text-4xl text-center font-bold mb-12">Let’s Connect</h2>
+    <form class="max-w-2xl mx-auto bg-white rounded-2xl shadow p-8" data-aos="zoom-in" data-aos-delay="200">
+      <input type="text" placeholder="Full Name" class="border p-3 rounded-lg w-full mb-4 focus:ring-2 focus:ring-indigo-500 transition duration-300">
+      <input type="email" placeholder="Email" class="border p-3 rounded-lg w-full mb-4 focus:ring-2 focus:ring-indigo-500 transition duration-300">
+      <textarea rows="5" placeholder="Message" class="border p-3 rounded-lg w-full mb-4 focus:ring-2 focus:ring-indigo-500 transition duration-300"></textarea>
+      <button class="w-full bg-indigo-600 text-white font-semibold py-3 rounded-full hover:bg-indigo-700 transition duration-300 transform hover:scale-105">
+        Send Message
+      </button>
+    </form>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-gray-900 text-white text-center py-6" data-aos="fade-in" data-aos-duration="1000">
+    <p class="text-gray-400 text-sm">© 2025 ZingMind HRMS. All rights reserved.</p>
+  </footer>
+
+  <script>
+    document.getElementById("menu-btn").addEventListener("click", () => {
+      document.getElementById("menu").classList.toggle("hidden");
+    });
+
+    // Initialize AOS
+    AOS.init();
+  </script>
+</body>
+</html>
